@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "535880455652",
+    "project_id": "celebration-station-customer",
+    "storage_bucket": "celebration-station-customer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535880455652:android:5fecda0c77b4340ba3a3f1",
+        "android_client_info": {
+          "package_name": "com.example.celebration_station_customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535880455652-8dgsnktsc99qala5jlkbppkbd7gauuun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnxkn8YwQv0fOSEE1FefSOyuWBjgjCS8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535880455652-8dgsnktsc99qala5jlkbppkbd7gauuun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
