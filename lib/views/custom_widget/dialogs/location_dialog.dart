@@ -2,17 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../Utils/fontFamily_utils.dart';
-import '../../../dashboard/bottomNavBar/bottom_nav_bar.dart';
 import '../../../model/GetDistrict.dart';
 import '../../../model/GetState.dart';
-import '../../../model/city_model.dart';
-import '../../../model/state_model.dart';
 import '../../../services/shared_preference.dart';
 import '../../../utils/screen_utils.dart';
 import '../../../utils/validation_mixin.dart';
-import '../custom_primary_button.dart';
-import 'city_picker.dart';
-import 'state_picker_dialog.dart';
 
 class LocationDailog extends StatefulWidget {
   LocationDailog({

@@ -6,8 +6,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import '../dashboard/bottomNavBar/bottom_nav_bar.dart';
 import '../model/GetAllProfileModel.dart';
 import '../model/LoginModel.dart';
-import '../model/get_city_list_model.dart';
-import '../model/get_state_list_model.dart';
 import '../model/mobile_verify_model.dart';
 import '../utils/loder.dart';
 import '../views/auth/login_screen.dart';
@@ -470,68 +468,6 @@ class ApiService {
       debugPrint('Dio E  $e');
       Loader.hideLoader();
     }
-  }
-
-  Future<GetStateListModel?> getStateList() async {
-    String? id = await Preferances.getString("id");
-    String? token = await Preferances.getString("token");
-    String? type = await Preferances.getString("type");
-    try {
-      Loader.showLoader();
-      Response response;
-      response = await dio.post(
-        'https://celebrationstation.in/get_ajax/get_all_states/',
-        options: Options(headers: {
-          'Client-Service': 'frontend-client',
-          'Auth-Key': 'simplerestapi',
-          'User-ID': id,
-          'Authorization': token,
-          'type': type
-          }
-        ),
-      );
-      if (response.statusCode == 200) {
-        GetStateListModel responseData =
-        GetStateListModel.fromJson(response.data);
-        Loader.hideLoader();
-        return responseData;
-      } else {
-        Loader.hideLoader();
-        throw Exception(response.data);
-      }
-    } on DioError catch (e) {
-      Loader.hideLoader();
-      debugPrint('Dio E  $e');
-    } finally {
-      Loader.hideLoader();
-    }
-  }
-
-  Future<GetCityListModel?> getCityList(String stateId) async {
-    try {
-      Loader.showLoader();
-      Response response;
-      FormData formData = FormData.fromMap({"stateid": stateId});
-      response = await dio.post('https://celebrationstation.in/get_ajax/get_all_district/',
-          options: Options(),
-          data: formData);
-      if (response.statusCode == 200) {
-        GetCityListModel responseData =
-        GetCityListModel.fromJson(response.data);
-        Loader.hideLoader();
-        print("responseData ----- ${responseData}");
-        return responseData;
-      } else {
-        Loader.hideLoader();
-        throw Exception(response.data);
-      }
-    } on DioError catch (e) {
-      Loader.hideLoader();
-      debugPrint('Dio E  $e');
-    } finally {
-      Loader.hideLoader();
-    }
-    return null;
   }
 
 }
